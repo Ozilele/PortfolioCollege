@@ -1,0 +1,22 @@
+
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin mq_max($canvas) {
+    @if map-has-key($breakpoints, $canvas) {
+        @media only screen and (max-width: map-get($breakpoints, $canvas)) {
+            @content;
+        }
+    }
+}
+
+@mixin mq_min($canvas) {
+    @if map-has-key($breakpoints, $canvas) {
+        @media only screen and (min-width: map-get($breakpoints, $canvas)) {
+            @content;
+        }
+    }
+}

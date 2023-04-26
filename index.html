@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPortfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="./sass/styles.css"> -->
+    <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap"         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <header class="header__content">
@@ -20,20 +22,53 @@
                 <span class="burger__item"></span>
             </button>
         </div>
-        <ul class="nav__links">
-            <li class="nav__item">
-                <a href="#overall">Overall</a>
-            </li>
-            <li class="nav__item">
-                <a href="#projects">Projects</a>
-            </li>
-            <li class="nav__item">
-                <a href="#interests">Interests</a>
-            </li>
-            <li class="nav__item">
-                <a href="#codes">Codes</a>
-            </li>
-        </ul>
+        <nav class="nav hidden">
+            <button class="close__btn">
+            </button>
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a class="active" href="#overall">Overall</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#projects">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#interests">Interests</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#codes">Codes</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <header class="disabled_js-header">
+        <div class="head">
+            <h2>MyPortfolio</h2>
+        </div>
+        <input class="side-menu" type="checkbox">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="disabled_js-nav">
+            <ul class="disabled_js-items">
+                <li class="nav__item">
+                    <a class="active" href="#overall">Overall</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#projects">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#interests">Interests</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav__item">
+                    <a class="inactive" href="#codes">Codes</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main class="site__content">
         <div id="overall" class="overall__section">
@@ -45,7 +80,7 @@
                         <a class="contact-link" href="https://pl.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="linkedin"></a>
                     </li>
                     <li class="contact-item">
-                        <a class="contact-link" href="https://github.com/Ozilele"><img src="https://cdn-icons-png.flaticon.com/512/1051/1051326.png" alt="linkedin"></a>
+                        <a class="contact-link" href="https://github.com/Ozilele"><img src="https://cdn-icons-png.flaticon.com/512/1051/1051326.png" alt="github"></a>
                     </li>
                     <li class="contact-item">
                         <a class="contact-link" href="https://www.facebook.com/"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="facebook"></a>
@@ -140,6 +175,32 @@
                 </article>
             </article>
         </div>
+        <section id="gallery" class="gallery_section">
+            <h2>Gallery</h2>
+            <!-- <button class="btn_prev">
+                <img src="./img/back.png" alt="back_btn">
+            </button> -->
+            <div class="img_wrapper">
+                <!-- <div class="gallery_img_0">
+                    
+                </div>
+                <div class="gallery_img_1">
+                    
+                </div> -->
+                <button class="btn_prev">
+                    <img src="./img/back.png" alt="back_btn">
+                </button>
+                <button class="btn_next">
+                    <img src="./img/next.png" alt="next_btn">
+                </button>
+            </div>
+            <!-- <div class="gallery_img"> -->
+                <!-- <img src="https://images.unsplash.com/photo-1681779279774-79d871470b6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80" alt="first"> -->
+            <!-- </div> -->
+        </section>
+        <section class="modal__window hidden">
+            <button class="close_modal">x</button>
+        </section>
         <section id="projects" class="projects__section">
             <h3>Projects</h3>
             <div class="projects__content">
@@ -186,26 +247,26 @@
             <h3>Java Checkers Code:</h3>
             <pre class="code-item">
                 <code class="code-snippet-item">
-                    public boolean checkMove(int oldX, int oldY, int newX, int newY) {
-        if ((newX + newY) % 2 == 1) {
-                            if (squares[newX][newY].getPiece() == null) {
-                                Piece newPiece = squares[oldX][oldY].getPiece();
-                            String my_move = availableMoves(newPiece);
-                            if (my_move.contains("( " + newX + " " + newY + " )")) {
-                              squares[oldX][oldY].setPiece(null);
-                              newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                              newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                              newPiece.setX_pos(newX);
-                              newPiece.setY_pos(newY);
-                              newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                              newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                              squares[newX][newY].setPiece(newPiece);
-                              return true;
-                            }
-                          }
-                        }
-                        return false;
-                    }
+public boolean checkMove(int oldX, int oldY, int newX, int newY) {
+    if ((newX + newY) % 2 == 1) {
+        if (squares[newX][newY].getPiece() == null) {
+            Piece newPiece = squares[oldX][oldY].getPiece();
+            String my_move = availableMoves(newPiece);
+                if (my_move.contains("( " + newX + " " + newY + " )")) {
+                    squares[oldX][oldY].setPiece(null);
+                    newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                    newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                    newPiece.setX_pos(newX);
+                    newPiece.setY_pos(newY);
+                    newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                    newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                    squares[newX][newY].setPiece(newPiece);
+                    return true; 
+                }   
+            }   
+        }
+                return false;
+}
                 </code>
             </pre>
             <h3>Gmail Code:</h3>
@@ -306,6 +367,9 @@
                 </div>
             </footer>
         </section>
+        <div class="overlay hidden">
+
+        </div>
     </main>
 </body>
 </html>

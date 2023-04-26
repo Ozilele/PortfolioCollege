@@ -1,0 +1,41 @@
+
+$blue-color: dodgerblue;
+$white-color: white;
+$black-color: black;
+$gray-color: lightgray;
+$dark-gray-color: darkgray;
+$aliceblue-color: aliceblue;
+
+$text-center: center;
+$font-overall-info: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$font-bold: 600;
+$font-size-1_25: 1.25rem;
+$gap-10: 10px;
+$gap-20: 20px;
+$margin-30: 30px;
+$margin-4: 4px;
+$margin-12: 12px;
+$margin-60: 5rem;
+$link-txt-decoration: none;
+$min-width-400: 400px;
+$parent_100: 100%;
+
+$flex-display: flex;
+$flex-align-def: center;
+$flex-justify-def: center;
+$flex-column: column;
+$flex-0_4: 0.4;
+
+$img-fit: contain;
+$border-radius-10: 10px;
+$border-bottom: 1px solid lightgray;
+$list-style-default: none;
+
+$breakpoints: (
+    'S': 600px,
+    'M_smaller': 720px,
+    'M_larger': 800px,
+    'L': 900px
+)
+
+// $color-list: ('magenta', 'green', 'grey');
