@@ -41,6 +41,7 @@ links_li.forEach((link) => {
       a.classList.remove("active");
       a.classList.add("inactive");
     });
+    nav_el.classList.add("hidden");
     a_link.classList.remove("inactive");
     a_link.classList.add("active");
   });
@@ -119,7 +120,6 @@ btnGalleryNext.addEventListener("click", () => {
 
 
 const handleImageClick = (img) => {
-  console.log(img.srcElement.currentSrc + " Halo");
   imgInModal = document.createElement("img");
   imgInModal.src = img.srcElement.currentSrc;
   imgInModal.alt = `${imgInModal.src}_alt`;

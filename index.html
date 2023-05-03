@@ -246,25 +246,25 @@
             <h2>Code Snippets:</h2>
             <h3>Java Checkers Code:</h3>
             <pre class="code-item">
-                <code class="code-snippet-item">
-public boolean checkMove(int oldX, int oldY, int newX, int newY) {
-    if ((newX + newY) % 2 == 1) {
-        if (squares[newX][newY].getPiece() == null) {
-            Piece newPiece = squares[oldX][oldY].getPiece();
-            String my_move = availableMoves(newPiece);
-                if (my_move.contains("( " + newX + " " + newY + " )")) {
-                    squares[oldX][oldY].setPiece(null);
-                    newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                    newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                    newPiece.setX_pos(newX);
-                    newPiece.setY_pos(newY);
-                    newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                    newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                    squares[newX][newY].setPiece(newPiece);
-                    return true; 
-                }   
-            }   
-        }
+              <code class="code-snippet-item">
+    public boolean checkMove(int oldX, int oldY, int newX, int newY) {
+if ((newX + newY) % 2 == 1) {
+          if (squares[newX][newY].getPiece() == null) {
+          Piece newPiece = squares[oldX][oldY].getPiece();
+          String my_move = availableMoves(newPiece);
+              if (my_move.contains("( " + newX + " " + newY + " )")) {
+                  squares[oldX][oldY].setPiece(null);
+                  newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                  newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                  newPiece.setX_pos(newX);
+                  newPiece.setY_pos(newY);
+                  newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                  newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                  squares[newX][newY].setPiece(newPiece);
+                  return true; 
+              }   
+          }   
+      }
                 return false;
 }
                 </code>
