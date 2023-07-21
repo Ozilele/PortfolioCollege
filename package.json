@@ -1,0 +1,19 @@
+{
+  "name": "portfoliocollege",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "compile": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozilele/PortfolioCollege.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ozilele/PortfolioCollege/issues"
+  },
+  "homepage": "https://github.com/Ozilele/PortfolioCollege#readme"
+}

@@ -21,15 +21,14 @@ const btnGalleryNext = document.querySelector(".btn_next");
 const closeModalBtn = document.querySelector(".close_modal");
 
 const links_a = [];
-const imagesArr = [];
 
 let currImg = 0;
 let maxIndex = 2;
 let imgInModal;
 
-jsEnHeader.style.display = "flex";
-nonJSHeader.style.display = "none";
-nonJSLinks.style.display = "none";
+// jsEnHeader.style.display = "flex";
+// nonJSHeader.style.display = "none";
+// nonJSLinks.style.display = "none";
 
 // Styling links in header
 links_li.forEach((link) => {
