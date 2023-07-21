@@ -7,6 +7,7 @@
     <title>MyPortfolio</title>
     <!-- <link rel="stylesheet" href="./sass/styles.css"> -->
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./prism.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
@@ -244,33 +245,33 @@
         <section id="codes" class="code-snippets">
             <h2>Code Snippets:</h2>
             <h3>Java Checkers Code:</h3>
-            <pre class="code-item">
-              <code class="code-snippet-item">
-    public boolean checkMove(int oldX, int oldY, int newX, int newY) {
-if ((newX + newY) % 2 == 1) {
-          if (squares[newX][newY].getPiece() == null) {
-          Piece newPiece = squares[oldX][oldY].getPiece();
-          String my_move = availableMoves(newPiece);
-              if (my_move.contains("( " + newX + " " + newY + " )")) {
-                  squares[oldX][oldY].setPiece(null);
-                  newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                  newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
-                  newPiece.setX_pos(newX);
-                  newPiece.setY_pos(newY);
-                  newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                  newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
-                  squares[newX][newY].setPiece(newPiece);
-                  return true; 
-              }   
-          }   
-      }
-                return false;
-}
+            <pre style="margin-bottom: 2rem; " class="code-item">
+              <code class="language-java">
+                public boolean checkMove(int oldX, int oldY, int newX, int newY) {
+                    if ((newX + newY) % 2 == 1) {
+                        if (squares[newX][newY].getPiece() == null) {
+                            Piece newPiece = squares[oldX][oldY].getPiece();
+                            String my_move = availableMoves(newPiece);
+                            if (my_move.contains("( " + newX + " " + newY + " )")) {
+                                squares[oldX][oldY].setPiece(null);
+                                newPiece.setCenterX(newX*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                                newPiece.setCenterY(newY*CheckersApp.PieceSize+CheckersApp.PieceSize*0.5);
+                                newPiece.setX_pos(newX);
+                                newPiece.setY_pos(newY);
+                                newPiece.setOldX(newPiece.getCenterX() - newPiece.getCenterX() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                                newPiece.setOldY(newPiece.getCenterY() - newPiece.getCenterY() % CheckersApp.PieceSize + CheckersApp.PieceSize * 0.5);
+                                squares[newX][newY].setPiece(newPiece);
+                                return true; 
+                            }   
+                        }   
+                    }
+                    return false;
+                }   
                 </code>
             </pre>
             <h3>Gmail Code:</h3>
-            <pre class="code-item">
-                <code class="code-snippet-item">
+            <pre style="margin-bottom: 2rem;" class="code-item">
+                <code class="language-javascript">
                     const signIn = () => {
                         signInWithPopup(auth, provider)
                         .then((result) => {
@@ -306,7 +307,7 @@ if ((newX + newY) % 2 == 1) {
             </pre>
             <h3>Dashboard Code:</h3>
             <pre class="code-item">
-                <code class="code-snippet-item">
+                <code class="language-javascript">
                     import { createSlice } from "@reduxjs/toolkit";
 
                     export const appSlice = createSlice({
@@ -319,16 +320,16 @@ if ((newX + newY) % 2 == 1) {
                     },
                     reducers: {
                         toggleSidebar: (state, action) => {
-                        state.isSidebarRolled = !state.isSidebarRolled;
+                            state.isSidebarRolled = !state.isSidebarRolled;
                         },
                         toggleModalWindow: (state, action) => {
-                        state.isModalOpen = !state.isModalOpen;
+                            state.isModalOpen = !state.isModalOpen;
                         },
                         setModalData: (state, action) => {
-                        state.modalData = action.payload;
+                            state.modalData = action.payload;
                         },
                         addEvent: (state, action) => {
-                        state.eventsData.push(action.payload);
+                            state.eventsData.push(action.payload);
                         }
                     },
                     });
@@ -371,5 +372,6 @@ if ((newX + newY) % 2 == 1) {
         </div>
     </main>
     <script type="module" src="./dist/app.js"></script>
+    <script src="./dist/prism/prism.js"></script>
 </body>
 </html>

@@ -84,3 +84,4 @@ const resetModalWindow = () => {
 renderGallery();
 closeModalBtn.addEventListener('click', resetModalWindow);
 overlay.addEventListener('click', resetModalWindow);
+
